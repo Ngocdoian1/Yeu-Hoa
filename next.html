@@ -1,127 +1,171 @@
 <!doctype html>
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title></title> 
-    <link rel="stylesheet" href="styles.css"> 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            background-image: url('Background.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            font-family: Arial, sans-serif;
-            box-sizing: border-box;
-        }
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tặng Bé Hoa 💖</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
-        .container {
-            display: grid;
-            grid-template-areas: 
-                "top-left top-right"
-                "button button"
-                "bottom-left bottom-right"
-                ". bottom-text";
-            gap: 20px;
-            text-align: center;
-            position: relative; 
-        }
+    /* Hiệu ứng trôi nổi mượt mà */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
 
-        .box {
-            width: 150px;
-            height: 200px;
-            border: 2px solid white;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    /* Hiệu ứng rung nhẹ */
+    @keyframes gentle-shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(0.6deg); }
+      50% { transform: rotate(-0.6deg); }
+      75% { transform: rotate(0.6deg); }
+    }
 
-        .box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .container {
+      display: grid;
+      grid-template-areas:
+        "top-left top-right"
+        "button button"
+        "bottom-left bottom-right"
+        ". bottom-text";
+      gap: 20px;
+      text-align: center;
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
 
-        .box-top-left {
-            grid-area: top-left;
-        }
+    .box {
+      width: 150px;
+      height: 200px;
+      border: 2px solid rgba(255,255,255,0.6);
+      background-color: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      overflow: hidden;
+      animation: float 5s ease-in-out infinite, gentle-shake 8s infinite;
+    }
 
-        .box-bottom-right {
-            grid-area: bottom-right;
-        }
+    .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .text {
-            color: white;
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 14px;
-            line-height: 1.6;
-            text-align: left;
-        }
+    .box-top-left {
+      grid-area: top-left;
+    }
 
-        .text-top-right {
-            grid-area: top-right;
-        }
+    .box-bottom-right {
+      grid-area: bottom-right;
+    }
 
-        .text-bottom-left {
-            grid-area: bottom-left;
-        }
+    .text {
+      color: white;
+      background-color: rgba(0,0,0,0.55);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+      animation: float 7s ease-in-out infinite;
+    }
 
-        .text-bottom {
-            grid-area: bottom-text;
-            position: absolute;
-            bottom: 50px; 
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            padding: 10px; 
-            font-size: 12px; 
-            line-height: 1.4; 
-        }
+    .text-top-right {
+      grid-area: top-right;
+    }
 
-        .button {
-            grid-area: button;
-            padding: 10px 20px;
-            font-size: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: white;
-            color: black;
-            margin: auto;
-        }
-    </style> 
-</head> 
-<body> 
-    <audio autoplay>
-        <source src="MyGirl.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <div class="container"> 
-        <div class="box box-top-left"> 
-            <img src="MyGirl.jpg" alt="Image 1"> 
-        </div> 
-        <div class="text text-top-right">
-            Hello Babe của a, chúc ebe Hoa một ngày 8/3 vui vẻ, hạnh phúc và luôn xinh đẹp nhé. Cảm ơn ebe đã đến bên a, đã luôn ở bên a, đã luôn yêu thương a. A sẽ cố gắng để trở thành người mà vợ có thể tự hào về a.   
-        </div> 
-        <a href="https://ngocdoian1.github.io/Yeu-Hoa-Top1/" class="button">Ấn Thêm Cái Nữa Đi Babe</a>
-        <div class="text text-bottom-left">
-            Hy vọng chúng ta có thể ở bên nhau lâu hơn, nếu cần thiết, chúng ta sẽ cùng nhau già đi hahaha, nếu e có vấn đề gì, hãy nói với a, chúng ta sẽ cùng nhau vượt qua. Và đừng quên rằng a luôn yêu e rất rất nhiều, cho dù như nào a vẫn yêu mình e thôi nói lằng nhằng quá hehe. Nói chung là yêu Vợ Hoa xinhhhhh gái, dễ thương, dễ thương, cute nhất quả đất này luôn.  
-        </div> 
-        <div class="box box-bottom-right">
-            <img src="My-Girl.jpg" alt="Image 2"> 
-        </div> 
-        <div class="text text-bottom">
-            Chúc mừng ngày Phụ Nữ Việt Nam 20/10! Yêu Hoa nhiều nhiều và chỉ có Hoa thôi nhé hehe.
-        </div> 
-    </div> 
+    .text-bottom-left {
+      grid-area: bottom-left;
+    }
+
+    .text-bottom {
+      grid-area: bottom-text;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .button {
+      grid-area: button;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      margin: auto;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #ffd6e8;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Nhạc tự động phát & lặp lại -->
+  <audio autoplay loop>
+    <source src="MyGirl.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <div class="container">
+    <div class="box box-top-left">
+      <img src="MyGirl.jpg" alt="Image 1">
+    </div>
+
+    <div class="text text-top-right">
+      Hello Babe của a, chúc ebe Hoa một ngày 8/3 vui vẻ, hạnh phúc và luôn xinh đẹp nhé.
+      Cảm ơn ebe đã đến bên a, đã luôn ở bên a, đã luôn yêu thương a.
+      A sẽ cố gắng để trở thành người mà vợ có thể tự hào về a.
+    </div>
+
+    <a href="https://ngocdoian1.github.io/Yeu-Hoa-Top1/" class="button">Ấn Thêm Cái Nữa Đi Babe 💕</a>
+
+    <div class="text text-bottom-left">
+      Hy vọng chúng ta có thể ở bên nhau lâu hơn, nếu cần thiết, chúng ta sẽ cùng nhau già đi hahaha,
+      nếu e có vấn đề gì, hãy nói với a, chúng ta sẽ cùng nhau vượt qua.
+      Và đừng quên rằng a luôn yêu e rất rất nhiều, cho dù như nào a vẫn yêu mình e thôi nói lằng nhằng quá hehe.
+      Nói chung là yêu Vợ Hoa xinhhhhh gái, dễ thương, cute nhất quả đất này luôn 💖.
+    </div>
+
+    <div class="box box-bottom-right">
+      <img src="My-Girl.jpg" alt="Image 2">
+    </div>
+
+    <div class="text text-bottom">
+      Chúc mừng ngày Phụ Nữ Việt Nam 20/10! Yêu Hoa nhiều nhiều và chỉ có Hoa thôi nhé hehe 🌷
+    </div>
+  </div>
 </body>
 </html>
